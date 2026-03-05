@@ -2,7 +2,7 @@
 
 # Distiller
 
-[![Agent Skill](https://img.shields.io/badge/Agent-Skill-blue.svg?style=for-the-badge)](https://github.com) [![Markdown](https://img.shields.io/badge/Markdown-Obsidian-purple.svg?style=for-the-badge&logo=markdown)](https://obsidian.md/) [![No Dependencies](https://img.shields.io/badge/Dependencies-None-brightgreen.svg?style=for-the-badge)](#)
+[![Version](https://img.shields.io/github/v/tag/Chi-hong22/distiller?label=version&style=for-the-badge&color=orange)](https://github.com/Chi-hong22/distiller/releases) [![Agent Skill](https://img.shields.io/badge/Agent-Skill-blue.svg?style=for-the-badge)](https://github.com) [![Markdown](https://img.shields.io/badge/Markdown-Obsidian-purple.svg?style=for-the-badge&logo=markdown)](https://obsidian.md/) [![No Dependencies](https://img.shields.io/badge/Dependencies-None-brightgreen.svg?style=for-the-badge)](#)
 
 <br/>
 <i>"Knowledge shouldn't just slip through your fingertips; let Distiller capture it."</i>
