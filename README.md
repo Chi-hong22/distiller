@@ -35,6 +35,20 @@ Distiller is a standalone Agent Skill tool designed to distill your high-quality
 
 ---
 
+## Installation
+
+```bash
+npx skills add Chi-hong22/distiller
+```
+
+Or install globally with auto-confirm:
+
+```bash
+npx skills add Chi-hong22/distiller -g -y
+```
+
+---
+
 ## Quick Start
 
 ### 1. Wake up Distiller
