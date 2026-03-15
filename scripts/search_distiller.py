@@ -2,7 +2,8 @@
 """
 Input: keywords/tags + search directory path
 Output: list of matching distilled documents with title, tags, date, confidence
-Pos: Enables Step 7 (create/append decision) by finding related existing documents
+Pos: Primary search method for Phase 3.2 (create/append decision). If Python is
+     unavailable, SKILL.md defines a Grep-based fallback that covers the same logic.
 """
 
 import argparse

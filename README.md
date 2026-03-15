@@ -31,6 +31,8 @@ Distiller is a standalone Agent Skill tool designed to distill your high-quality
 - **Restrained & Authentic**: Strictly follows the "extract, don't interpret" principle. No hallucinations. Every extracted point is marked with a confidence level (high/medium/low) to preserve the original technical context.
 - **Seamless Integration**: Standardized `YAML Frontmatter` and hierarchical tag taxonomy, natively supporting local bidirectional linking tools like Obsidian.
 - **Review & Reinforce**: Built-in smart search script. Before extracting, it automatically searches historical notes, allowing you to choose whether to "append to existing" or "create a new" document, building compounded knowledge.
+- **Progressive Disclosure**: Resources are loaded on demand — only the matched scene template is read during extraction, keeping context lightweight and focused.
+- **Quality Checks**: Built-in verification criteria (frontmatter completeness, tag compliance, confidence coverage, faithfulness, actionability) to ensure every distilled document meets a consistent standard.
 - **Pure & Lightweight**: Zero external dependencies, runs out of the box with the system's built-in Python environment.
 
 ---
@@ -60,16 +62,18 @@ distill
 extract distilled knowledge
 retrospective
 what did I learn
+wrap up
+record this
+let's save what we learned
 ```
 
 ### 2. Interactive Extraction (Guided by AI)
 
-Once awakened, Distiller will automatically execute the following workflow. You just need to make a few simple choices:
+Once awakened, Distiller will automatically execute a 5-phase workflow. You just need to make a few simple choices:
 
-1. **Confirm Scope**: Summarize the current conversation, or all conversations today?
-2. **Confirm Scene**: AI will automatically match the most suitable scene (e.g., *It seems we are debugging a bug, can we use the "Bug Retrospective" template?*).
-3. **Confirm Storage**: Save to your Obsidian vault, or the current project directory?
-4. **Generate & Review**: AI will present a beautifully formatted summary document and save it only after your confirmation.
+1. **Scope & Scene**: Which content to distill? AI auto-matches the best scene (e.g., *It seems we are debugging a bug, shall we use the "Bug Retrospective" template?*).
+2. **Storage & Dedup**: Save to your Obsidian vault or the current project directory? AI searches existing notes to avoid fragmentation.
+3. **Extract & Review**: AI presents a beautifully formatted document with confidence markers, and saves it only after your confirmation.
 
 ---
 
@@ -109,18 +113,20 @@ If you want to dive deeper or customize Distiller, unfold the structure map belo
 
 ```text
 distiller/
-├── SKILL.md                        - Main entry of the skill, defines the guided workflow
+├── SKILL.md                        - Main entry: 5-phase workflow + progressive disclosure + quality checks
 ├── assets/
 │   └── distiller-frontmatter.md   - Standardized Obsidian YAML header template
 ├── scripts/
 │   └── search_distiller.py        - Core search script, finds related historical notes using word frequency
-└── references/
-    ├── tags-taxonomy.md            - Tag taxonomy guide
-    ├── scene-project-wrapup.md    - [Scene Template] Project/iteration wrap-up
-    ├── scene-bug-retrospective.md - [Scene Template] In-depth bug retrospective
-    ├── scene-refactoring.md       - [Scene Template] Code refactoring and evolution
-    ├── scene-tech-learning.md     - [Scene Template] Exploring and learning new tech
-    └── scene-universal.md         - [Scene Template] Universal knowledge extraction
+├── references/
+│   ├── tags-taxonomy.md            - Tag taxonomy guide
+│   ├── scene-project-wrapup.md    - [Scene Template] Project/iteration wrap-up
+│   ├── scene-bug-retrospective.md - [Scene Template] In-depth bug retrospective
+│   ├── scene-refactoring.md       - [Scene Template] Code refactoring and evolution
+│   ├── scene-tech-learning.md     - [Scene Template] Exploring and learning new tech
+│   └── scene-universal.md         - [Scene Template] Universal knowledge extraction
+└── evals/                          - (Optional) Test prompts and assertions for skill iteration
+    └── evals.json                  - Evaluation cases following skill-creator schema
 ```
 
 </details>

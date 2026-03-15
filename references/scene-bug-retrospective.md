@@ -31,14 +31,23 @@ Trace from symptom to root cause:
 - Each link in the chain should explain "why" the previous level happened
 - Note any red herrings encountered during investigation
 
-### 3. Quick Diagnosis Method
+### 3. Code Evidence
+
+Include concrete code to make the bug tangible and the fix reproducible:
+- **Problem code**: The minimal snippet showing the buggy behavior (annotate the critical line)
+- **Fix code**: The corrected version, showing the exact change
+- **Diagnostic snippet**: A short script or command that confirms the bug or verifies the fix (e.g. `faulthandler.dump_traceback()`, a test assertion, a curl command)
+
+If source content doesn't contain literal code, reconstruct a representative pseudo-code example that captures the structural pattern of the bug.
+
+### 4. Quick Diagnosis Method
 
 Distill the fastest path to identify this class of bug next time:
 - What to check first (the "5-minute test")
 - Key log messages or error patterns to grep for
 - Diagnostic commands or code snippets
 
-### 4. Prevention Checklist
+### 5. Prevention Checklist
 
 Concrete measures to prevent recurrence:
 - Code review checklist items
@@ -46,7 +55,7 @@ Concrete measures to prevent recurrence:
 - Linter rules or static analysis checks
 - Coding conventions to follow
 
-### 5. Transferable Debugging Methodology
+### 6. Transferable Debugging Methodology
 
 Abstract the debugging approach into a reusable method:
 - What general strategy was used (binary search, hypothesis testing, etc.)
@@ -78,6 +87,26 @@ Abstract the debugging approach into a reusable method:
   → Root cause: <Fundamental reason>
 - Red herrings: ...
 
+## Code Evidence
+
+**Problem code** (annotate the critical line):
+\`\`\`<lang>
+# ← <annotation explaining what's wrong>
+<buggy snippet>
+\`\`\`
+
+**Fix code**:
+\`\`\`<lang>
+<corrected snippet showing the exact change>
+\`\`\`
+
+**Diagnostic snippet** (confirms bug or verifies fix):
+\`\`\`<lang>
+<short verification script or command>
+\`\`\`
+
+If no literal code exists in the source, reconstruct representative pseudo-code that captures the structural pattern.
+
 ## Quick Diagnosis
 When you see `<symptom pattern>`, check:
 1. ...
@@ -101,8 +130,10 @@ When you see `<symptom pattern>`, check:
 ## Section Headers (zh)
 
 When source language is Chinese, use these section headers:
+
 - Bug Profile → Bug 画像
 - Root Cause Chain → 根因分析链
+- Code Evidence → 代码证据
 - Quick Diagnosis → 快速定位
 - Prevention Checklist → 预防清单
 - Debugging Methodology → 调试方法论
